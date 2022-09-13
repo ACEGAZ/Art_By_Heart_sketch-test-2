@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+<script>
+    setTimeout(function(){
+        window.location.href = "gallery";
+    }, 2000);
+</script>
+<div id="comment-success">
+<h1> Thank you for your comment!</h1>
+</div>
+{%endblock%}
+
