@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load cloudinary %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row" id="upload-artwork">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ upload_art_form }}
+            <br>
+            <input type="submit" value="Upload">
+         </form>
+    </div>
+</div>
+{%endblock%}

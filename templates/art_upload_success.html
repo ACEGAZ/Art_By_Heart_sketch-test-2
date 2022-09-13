@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load static%}
+
+{% block content %}
+<div class="container-fluid text-center text-primary artwork-uploaded">
+    <div class="row align-items-center">
+        <div class="col">
+            <h1>Your artwork has been successfully uploaded</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid text-center text-primary artwork-uploaded">
+    <div class="col align-items-center">
+        <div>
+            <h1> Would you like to Upload another?</h1>
+            <a href="admin_upload_art.html">
+            <button value="Yes">Yes</button>
+            </a>
+        </div>
+    </div>
+</div>
+{%endblock%}
