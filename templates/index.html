@@ -1,0 +1,525 @@
+{% extends "base.html" %}
+
+{% load static%}
+{% block content %}
+
+<!-- welcome message and info -->
+<main id="index">
+    <div id="welcome-message">
+        <h1 class="text-primary">Hi! I’m Heart-Sketch but I often go by Trixie.</h1>
+
+        <p>I mostly draw MLP Characters, Ferals and Dragons but I do experiment with Humans and Anthros.</p>
+
+        <p> I’m a huge Avatar: The Last Airbender and Lion King nerd (totally not gay for Zuko and Kovu) so you’ll often
+            see me fangirling over anything to do with that. :D
+
+            Thank you for showing interest in my artwork.</p>
+
+        <p>More of my artwork can be found on the Gallery page <a href="gallery.html">Here</a></p>
+    </div>
+
+    <!-- terms of service -->
+    <div class="terms-of-service-payment-post-commission">
+        <h2 id="terms-of-service-h2" class="text-primary">TERMS OF SERVICE</h2>
+        <h2 class="general-payment-post-h2">General</h2>
+        <p>I have the right to refuse any commission.</p>
+        <p>I work in a slot based system. Once the slots are filled I will not take on any more until that list has been
+            completed.</p>
+        <p>Feel free to message me about updates on your commission via Twitter or Discord. I may be late replying due
+            to time zones and work.</p>
+        <p>Extra characters are half/full cost depending on how much oc the second oc is shown (e.g: behind the other
+            would be less. If both are shown in full then its x2 for 2 ocs together)</p>
+        <p>Visual reference of the character will be needed. I will not work off descriptions (unless for a Reference
+            Sheet / Customs)</p>
+        <p>All artwork will contain my watermark.</p>
+    </div>
+
+    <div class="terms-of-service-payment-post-commission">
+        <h2 class="general-payment-post-h2">Payment</h2>
+        <p> Payment is done through PayPal using UK Pounds (£), using “Goods and Services”.</p>
+        <p>Full payment required BEFORE commission is started.</p>
+        <p>Refunds will be provided for commissions that HAVE NOT BEEN STARTED.</p>
+        <p>I do not accept any cryptomoney.</p>
+    </div>
+    <div class="terms-of-service-payment-post-commission">
+        <h2 class="general-payment-post-h2">Post Commission</h2>
+        <p>If there is an issue with your finished commission please message me, I will be happy to edit/ make
+            adjustments
+            to the piece.</p>
+        <p>You are free to share the commission but please do tag me as the original artist.</p>
+    </div>
+
+    <!-- will, try and won't draw -->
+    <div class="container text-center" id="will-try-wont-draw">
+        <div class="row">
+            <div class="col-4">
+                <h3 class="text-primary">I will draw</h3>
+                <ul>
+                    <li>
+                        Ponies
+                    </li>
+                    <li>
+                        Ferals
+                    </li>
+                    <li>
+                        Dragons
+                    </li>
+                    <li>
+                        Simple Backgrounds
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <h3 class="text-warning">I will try to draw</h3>
+                <ul>
+                    <li>
+                        Humans
+                    </li>
+                    <li>
+                        Anthro (species dependent)
+                    </li>
+                    <li>
+                        Complex Characters / Clothing
+                    </li>
+                    <li>
+                        Complex Backgrounds
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <h3 class="text-danger">I will not draw</h3>
+                <ul>
+                    <li>
+                        NSFW (Gore)
+                    </li>
+                    <li>
+                        NSFW (Sexual)
+                    </li>
+                    <li>
+                        Mechanical (will try prosthetics)
+                    </li>
+                    <li>
+                        Controversial Subjects
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p>Please fill out the correct form <a class="text-primary" href="commissions.html">here</a> for a commission or
+            contact me through either my Twitter or message me on Discord using Trixie#0660. Links to my artwork can be found at the bottom of the page.</p>
+    </div>
+
+
+    <h3 id="commissioning-me">BY COMMISSIONING ME, YOU HAVE READ AND AGREED TO THE TERMS OF SERVICE STATED ABOVE</h3>
+
+    <!-- commission prices -->
+    <div id="commission-prices-examples">
+        <h2 class="text-primary">COMMISSION PRICES AND EXAMPLES</h2>
+        <p>ADDITIONAL CHARACTERS WILL BE HALF THE PRICE OF THE COMMISSION OPTION (ROUNDED UP) ON TOP OF THE BASE PRICE
+            (UNLESS STATED OTHERWISE IN THE COMMISSION OPTION)</p>
+
+        <p>MAXIMUM OF 3 SEPARATE CHARACTERS PER DRAWING</p>
+    </div>
+
+    <!-- chibi-headshots -->
+    <div class="container text-center pink-border" id="chibi-headshots">
+        <div class="row row-cols-2">
+
+            <div class="col">
+                <h3 class="text-primary">CHIBI HEADSHOTS:</h3>
+                <div>
+                    <img id="chibi-headtshot-image-1" src="{% static '../static/images/chibi-headshot-1.png' %}"
+                        alt="chibi-headshot">
+                </div>
+            </div>
+            <div class="col">
+                <h3>COLOUR £5</h3>
+                <p>This option will consist of:</p>
+                <ul>
+                    <li>Clean line art</li>
+                    <li>Clean, accurate colouring</li>
+                    <li>Simple eye shading</li>
+                    <li>White outline around the character</li>
+                    <li>Transparent background</li>
+                </ul>
+            </div>
+            <div class="col"><img id="chibi-headtshot-image-2"
+                    src="{% static '../static/images/chibi-headshot-2.png' %}" alt="chibi-headshot"></div>
+            <div class="col">
+                <h3>SHADED £7</h3>
+                <p>This option will consist of:</p>
+                <ul>
+                    <li>Clean line art</li>
+                    <li>Clean, accurate colouring</li>
+                    <li>Fully shaded (included eyes)</li>
+                    <li>Simple, white outline around the character</li>
+                    <li>Transparent background</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- chibi-fullbody -->
+    <div class="container text-center blue-border" id="chibi-fullbody">
+        <div class="row row-cols-2">
+
+            <div class="col">
+                <h3>COLOUR £5</h3>
+                <p>This option will consist of:</p>
+                <ul>
+                    <li>Clean line art</li>
+                    <li>Clean, accurate colouring</li>
+                    <li>Simple eye shading</li>
+                    <li>White outline around the character</li>
+                    <li>Transparent background</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3 class="text-primary">CHIBI FULLBODY</h3>
+                <p>NO SHADING</p>
+                <div><img id="chibi-fullbody-image-1" src="{% static '../static/images/chibi-fullbody-1.png' %}"
+                        alt="chibi-fullbody-1"></div>
+            </div>
+            <div class="col">
+                <h3>COLOUR £15</h3>
+                <p>This option will consist of:</p>
+                <ul>
+                    <li>Clean line art</li>
+                    <li>Clean, accurate colouring</li>
+                    <li>Simple eye shading</li>
+                    <li>White outline around the character</li>
+                    <li>Transparent background</li>
+                </ul>
+            </div>
+            <div class="col"><img id="chibi-fullbody-image-2" src="{% static '../static/images/chibi-fullbody-2.png' %}"
+                    alt="chibi-fullbody-2">
+            </div>
+        </div>
+    </div>
+
+    <!-- normal-headshots -->
+    <div class="container text-center pink-border">
+        <div class="row row-cols-2">
+
+            <div class="col">
+                <h3 class="text-primary">NORMAL HEADSHOT:</h3>
+                <div>
+                    <img id="normal-headshot-1" src="{% static '../static/images/normal-headshot-1.png' %}"
+                        alt="normal-headshot-1">
+                </div>
+            </div>
+            <div class="col">
+                <h3>LINE £10</h3>
+                <p>This option will consist of:</p>
+                <ul>
+                    <li>Clean line art</li>
+                    <li>White character colour</li>
+                    <li>White background</li>
+                </ul>
+            </div>
+            <div class="col"><img id="normal-headshot-2" src="{% static '../static/images/normal-headshot-2.png' %}"
+                    alt="normal-headshot-2"></div>
+            <div class="col">
+                <h3>COLOUR £15</h3>
+                <p>This option will consist of:</p>
+                <ul>
+                    <li>Clean line art</li>
+                    <li>Clean, accurate colouring</li>
+                    <li>Simple eye shading</li>
+                    <li>White outline around the character</li>
+                    <li>Transparent background</li>
+                </ul>
+                <div class="shaded-divs">
+                    <h3>SHADED £18</h3>
+                    <p>This option will consist of:</p>
+                    <ul>
+                        <li>Clean line art</li>
+                        <li>Clean, accurate colouring</li>
+                        <li>Fully shaded (included eyes)</li>
+                        <li>Simple, white outline around the character</li>
+                        <li>Transparent background</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- half body -->
+    <div class="container text-center blue-border">
+        <div class="row row-cols-2">
+            <div class="col">
+                <h3>LINE £20</h3>
+                <p>This option will consist of:</p>
+                <ul>
+                    <li>Clean line art</li>
+                    <li>White character colour</li>
+                    <li>White background</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3 class="text-primary">HALF BODY</h3>
+                <p>NO SHADING</p>
+                <div>
+                    <img id="halfbody-1" src="{% static '../static/images/halfbody-1.png' %}" alt="halfbody-1">
+                </div>
+            </div>
+            <div class="col">
+                <h3>COLOUR £25</h3>
+                <p>This option will consist of:</p>
+                <ul>
+                    <li>Clean line art</li>
+                    <li>Clean, accurate colouring</li>
+                    <li>Simple eye shading</li>
+                    <li>White outline around the character</li>
+                    <li>Transparent background</li>
+                </ul>
+            </div>
+            <div class="col">
+                <img id="halfbody-2" src="{% static '../static/images/halfbody-2.png' %}" alt="halfbody-2">
+            </div>
+            <div>
+                <h3>SHADED £30</h3>
+                <p>This option will consist of:</p>
+                <div>
+                    <ul>
+                        <li>Clean line art</li>
+                        <li>Clean, accurate colouring</li>
+                        <li>Fully shaded (included eyes)</li>
+                        <li>Simple, white outline around the character</li>
+                        <li>Transparent background</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- full body -->
+    <div class="container text-center pink-border">
+        <div class="row row-cols-2">
+            <div class="col">
+                <h3 class="text-primary">FULL BODY:</h3>
+                <div>
+                    <img id="fullbody-1" src="{% static '../static/images/fullbody-1.png' %}" alt="fullbody-1">
+                </div>
+            </div>
+            <div class="col">
+                <h3>LINE £20</h3>
+                <p>This option will consist of:</p>
+                <ul>
+                    <li>Clean line art</li>
+                    <li>White character colour</li>
+                    <li>White background</li>
+                </ul>
+            </div>
+            <div class="col"><img id="fullbody-2" src="{% static '../static/images/fullbody-2.png' %}" alt="fullbody-2">
+            </div>
+            <div class="col">
+                <h3>COLOUR £25</h3>
+                <p>This option will consist of:</p>
+                <ul>
+                    <li>Clean line art</li>
+                    <li>Clean, accurate colouring</li>
+                    <li>Simple eye shading</li>
+                    <li>White outline around the character</li>
+                    <li>Transparent background</li>
+                </ul>
+                <div class="shaded-divs">
+                    <h3>SHADED £30</h3>
+                    <p>This option will consist of:</p>
+                    <ul>
+                        <li>Clean line art</li>
+                        <li>Clean, accurate colouring</li>
+                        <li>Fully shaded (included eyes)</li>
+                        <li>Simple, white outline around the character</li>
+                        <li>Transparent background</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- sketch-page -->
+    <div class="container text-center blue-border">
+        <div class="row row-cols-2">
+            <div class="col">
+                <h3>All Sketch Pages Come With:</h3>
+                <ul>
+                    <li>Full Body</li>
+                    <li>Half Body</li>
+                    <li>Chibi Headshot</li>
+                    <li>Normal Headshot</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3 class="text-primary">SKETCH PAGE:</h3>
+                <div>
+                    <img id="sketch-page-1" src="{% static '../static/images/sketch-page-1.png' %}" alt="sketch-page-1">
+                </div>
+            </div>
+            <div class="col">
+                <h3>LINE £40</h3>
+                <p>This option will consist of:</p>
+                <ul>
+                    <li>Clean line art</li>
+                    <li>White character colour</li>
+                    <li>White background or simple pattern</li>
+                </ul>
+            </div>
+            <div class="col">
+                <img id="sketch-page-2" src="{% static '../static/images/sketch-page-2.png' %}" alt="sketch-page-2">
+            </div>
+            <div>
+                <h3>COLOUR £55</h3>
+                <p>This option will consist of:</p>
+                <div>
+                    <ul>
+                        <li>Clean line art</li>
+                        <li>Clean, accurate colouring</li>
+                        <li>Simple eye shading</li>
+                        <li>White outline around the character</li>
+                        <li>Transparent background or simple pattern</li>
+                    </ul>
+                    <div>
+                        <h3>ADDITIONALS £2 - £15 +</h3>
+                        <p>Additional drawings can be added, price is dependent on original
+                            commission option and what type of artwork you are after.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- background-options -->
+    <div class="container text-center pink-border" id="background-options">
+        <div class="row row-cols-2">
+            <div class="col">
+                <h3 class="text-primary">BACKGROUND OPTIONS:</h3>
+                <div>
+                    <img id="background-1" src="{% static '../static/images/background-1.png' %}" alt="background-1">
+                </div>
+            </div>
+            <div class="col">
+                <h3>Backgrounds are offered for ONLY HALF BODY AND FULL BODY commissions. </h3>
+
+                <p>The background will reflect the style of the character commission. For example,
+                    a lined Full Body will have a lined background (black and white) whereas a
+                    Shade commission will have a Shaded background (shown in the example on the left).</p>
+            </div>
+            <div class="col">
+                <img id="background-2" src="{% static '../static/images/background-2.png' %}" alt="background-2">
+                <p>*Please ask me about more complex scenes / backgrounds. I cannot guarantee that I will be able
+                    to do them.</p>
+            </div>
+
+            <div class="col">
+                <h3>HALF BODY:</h3>
+                <ul>
+                    <li>Line w/ Background £22</li>
+                    <li>Colour w/ Background £25</li>
+                    <li>Shaded w/ Background £30</li>
+                </ul>
+                <div>
+                    <h3>Full Body:</h3>
+                    <ul>
+                        <li>Line w/ Background £35</li>
+                        <li>Colour w/ Background £40</li>
+                        <li>Shaded w/ Background £45</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- reference sheets -->
+    <div class="container text-center blue-border">
+        <div class="row row-cols-2">
+            <div class="col">
+                <h3>All reference sheets Come With:</h3>
+                <ul>
+                    <li>1 View</li>
+                    <li>Chibi Headshot (coloured)</li>
+                    <li>3 Accessories</li>
+                    <li>Text</li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <h3 class="text-primary">REFERENCE SHEETS:</h3>
+                <p>Price varies depending on character species</p>
+                <div>
+                    <img id="reference-sheet-1" src="{% static '../static/images/reference-sheet-1.png' %}"
+                        alt="reference-sheet-1">
+                </div>
+            </div>
+            <div class="col">
+                <h3>Ponies / Other Animals</h3>
+                <ul>
+                    <li>1 View £40</li>
+                    <li>2 Views £50</li>
+                </ul>
+            </div>
+            <div class="col">
+                <img id="reference-sheet-2" src="{% static '../static/images/reference-sheet-2.png' %}"
+                    alt="reference-sheet-2">
+            </div>
+            <div>
+                <h3>Human / Anthro</h3>
+                <div>
+                    <ul>
+                        <li>1 View £30</li>
+                        <li>2 Views £40</li>
+                    </ul>
+                    <div>
+                        <h3>Additionals (for each type)</h3>
+                        <ul>
+                            <li>Additional character views +£10</li>
+                            <li>Additional accessories +£2</li>
+                            <li>Other (to be discussed) £2 - £20+ </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- customs -->
+    <div class="container text-center pink-border" id="chibi-headshots">
+        <div class="row row-cols-2">
+            <div class="col">
+                <h3 class="text-primary">CUSTOMS:</h3>
+                <div>
+                    <img id="custom-1" src="{% static '../static/images/custom-1.png' %}" alt="custom-1">
+                </div>
+            </div>
+            <div class="col">
+                <h3>All Customs will come with:</h3>
+                <ul>
+                    <li>One/Two views</li>
+                    <li>Chibi Headshot</li>
+                    <li>Text</li>
+                </ul>
+            </div>
+            <div class="col">
+                <img id="custom-2" src="{% static '../static/images/custom-2.png' %}" alt="custom-2">
+            </div>
+
+            <div class="col">
+                <p>Customs can also be redesigns of existing characters.</p>
+                <h3>Ponies / Ferals / Dragons £50+</h3>
+                <p>Price may increase depending on complexity and any additional features you would like.
+                    This will be discussed once a Custom request has
+                    been received and price will be worked out accordingly. </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</main>
+{%endblock%}
