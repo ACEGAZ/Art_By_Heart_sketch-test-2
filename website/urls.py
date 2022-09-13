@@ -8,5 +8,6 @@ urlpatterns = [
     path('commissions', views.commission_view, name='commissions'),
     path('admin_upload_art', views.upload_art_view, name='admin_upload_art'),
     path('add_comment', AddCommentView.as_view(), name='add_comment'),
+    path('add_comment_success', views.add_comment_success, name='add_comment_success'),
     path('accounts/', include('allauth.urls')),
 ]
