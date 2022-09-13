@@ -1,0 +1,367 @@
+/* body font */
+body {
+    font-family: 'Old Standard TT', sans serif;
+    text-align: center;
+    font-size: 16px;
+}
+
+input[type=submit] {
+    color: blue;
+    margin-top: 20px;
+}
+
+/* welcome message and terms of service */
+
+#welcome-message{
+    margin-top: 50px;
+}
+
+.terms-of-service-payment-post-commission{
+    margin-top: 50px;
+}
+
+#terms-of-service-h2 {
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+.general-payment-post-h2 {
+    margin-bottom: 30px;
+}
+
+#will-try-wont-draw{
+    margin-top: 50px;
+}
+
+#will-try-wont-draw p{
+    margin-top: 30px;
+}
+
+#will-try-wont-draw ul{
+    font-size: 20px;
+    list-style: none;
+    padding: 0%;
+    margin-top: 20px;
+}
+
+#will-try-wont-draw li{
+    margin-top: 20px;
+}
+
+#commissioning-me{
+    margin-top: 50px;
+}
+
+#commission-prices-examples{
+    margin-top: 100px;
+}
+
+#commission-prices-examples p{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+/* index border styles */
+.pink-border {
+    border: 25px solid;
+    border-image: linear-gradient(rgb(246, 232, 243), rgb(246, 214, 242)) 1;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.blue-border {
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to right, rgb(3, 61, 254), rgb(74, 185, 254)) 1;
+}
+
+.blue-border ul, .pink-border ul {
+    padding: 0%;
+    list-style: none;
+}
+
+.blue-border li, .pink-border li  {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.blue-border h3, .pink-border h3  {
+    margin-top: 20px;
+}
+
+#background-options h3 {
+    margin-top: 50px;
+}
+
+.shaded-divs {
+    margin-top: 150px;
+}
+
+/* index images styles */
+
+#chibi-headtshot-image-1, #chibi-headtshot-image-2, #chibi-fullbody-image-1, #chibi-fullbody-image-2 {
+    border-radius: 0%;
+    object-fit: contain;
+    height: 60%;
+    width: 60%;
+    padding-bottom: 30px;
+}
+
+#normal-headshot-1, #halfbody-1, #fullbody-1, #sketch-page-1 {
+    width: 50%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 0%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#sketch-page-2, #reference-sheet-2  {
+    width: 50%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 0%;
+    margin-top: 150px;
+}
+
+#normal-headshot-2, #halfbody-2, #fullbody-2 {
+    width: 50%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 0%;
+    margin-top: 300px;
+    
+}
+
+#background-1, #background-2, #reference-sheet-1 {
+    width: 50%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 0%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#custom-1, #custom-2 {
+    width: 50%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 0%;
+}
+
+
+/* nav bar */
+.bg-pink {
+    background-color: #eaaee0 !important;
+}
+
+img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.nav-link {
+    font-size: 30px;
+    color: blue;
+}
+
+#welcome-user {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+/* footer */
+
+footer {
+    background-color: #eaaee0 !important;
+    line-height: 10px;
+}
+
+/* comissions */
+
+input[type=text],
+input[type=email],
+textarea {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    font-size: 20px;
+}
+
+form {
+    text-align: center;
+    font-size: 25px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+textarea {
+    height: 50px;
+}
+
+.success {
+    font-size: 20px;
+    padding-top: 100px;
+}
+
+h1 {
+    margin-bottom: 75px;
+}
+
+#commission input {
+    margin-top: 20px;
+}
+
+#commissions label {
+    display: block;
+}
+
+/* log in */
+
+#log_in {
+    font-size: 20px;
+}
+
+#log_in,
+h1 {
+    margin-top: 20px;
+}
+
+#log_in input[type=text],
+input[type=password] {
+    width: 30%;
+}
+
+.secondaryAction {
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* log out */
+
+#log_out {
+    font-size: 20px;
+}
+
+#log_out,
+h1 {
+    margin-top: 20px;
+}
+
+/* sign up */
+
+#sign_up {
+    font-size: 20px;
+    width: 40%;
+}
+
+#sign_up,
+h1 {
+    margin-top: 20px;
+}
+
+#sign_up button {
+    margin-top: 20px;
+}
+
+#sign_up input[type=password] {
+    width: 100%;
+    display: block;
+}
+
+#sign_up input[type=email] {
+    width: 100%;
+    display: block;
+}
+
+#sign_up input[type=text] {
+    width: 100%;
+    display: block;
+}
+
+/* admin upload art */
+
+#upload-artwork ul{
+    list-style: none;
+}
+
+#upload-artwork label {
+    display: block;
+    margin-top: 40px;
+}
+
+#upload-artwork li {
+    display: none;
+}
+
+/* art upload success */
+.artwork-uploaded h1 {
+    margin-top: 70px;
+}
+
+.artwork-uploaded button {
+
+    margin-bottom: 50px;
+    width: 100px;
+    height: 50px;
+    color: blue;
+    font-size: 20px;
+}
+
+/* gallery images */
+
+.gallery-art-display {
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+}
+
+.gallery-art-display h1{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.gallery-art-display img {
+    border-radius: 0%;
+    width: 50%;
+    height: 50%;
+    margin-bottom: 50px;
+}
+
+/* gallery comments section */
+#comments-section {
+    margin-bottom: 50px;
+}
+
+#comments-section h2 {
+    margin-top: 30px;
+}
+
+/* gallery comments section */
+
+#comment-success {
+    margin-top: 200px;
+}
+
+/* gallery comments success */
+#add-comment h1 {
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+#add-comment label {
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 600px) {
+    h3 {
+      font-size: 20px;
+    }
+  }
