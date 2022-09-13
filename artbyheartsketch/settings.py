@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 development = os.environ.get('DEVELOPMENT', False)
 DEBUG = development
 
-ALLOWED_HOSTS = ['localhost', 'art_by_heart_sketch.herokuapp.com', 'localhost', '8080-acegaz-artbyheartsketch-bpt70128mnm.ws-eu53.gitpod.io', '8000-acegaz-artbyheartsketch-bpt70128mnm.ws-eu53.gitpod.io']
+ALLOWED_HOSTS = ['localhost', 'artbyheartsketch.herokuapp.com', 'localhost', '8080-acegaz-artbyheartsketch-bpt70128mnm.ws-eu53.gitpod.io', '8000-acegaz-artbyheartsketch-bpt70128mnm.ws-eu53.gitpod.io']
 
 
 # Application definition
