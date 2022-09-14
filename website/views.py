@@ -72,12 +72,13 @@ class AddCommentView(CreateView):
 
 
 
+
+
+
 class UpdateCommentView(UpdateView):
     model = comment
-    template_name = 'website/update_comment.html'
+    template_name = 'update_comment.html'
     fields = ('author', 'post', 'name', 'body')
-    context_object_name = 'update_comment'
-
 
 
 

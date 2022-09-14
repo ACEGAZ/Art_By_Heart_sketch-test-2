@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row" id="update-comment">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input type="submit" value="Update Comment">
+         </form>
+    </div>
+</div>
+{%endblock%}

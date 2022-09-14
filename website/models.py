@@ -76,5 +76,5 @@ class comment(models.Model):
     def get_absolute_url(self):
         return reverse('add_comment_success')
 
-class whatever(models.Model):
-    email = models.EmailField(max_length=100)
+    def get_absolute_url_update(self):
+        return reverse('update_comment', kwargs={'pk': self.pk})
