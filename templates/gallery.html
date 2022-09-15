@@ -11,12 +11,17 @@
             {% for picture in pictures %}
             {% if forloop.counter|divisibleby:2 %}
             <h1>{{picture.title}}</h1>
+            
             <img src="{{ picture.featured_image.url }}">
+            
         </div>
         <div class="col-sm-6 gallery-art-display">
             {% else %}
             <h1>{{picture.title}}</h1>
             <img src="{{ picture.featured_image.url }}">
+            {% endif %}
+            {% if user.is_authenticated %}
+            <a href="{% url 'add_comment' picture.pk %}">Add a comment</a>
             {% endif %}
             {% endfor %}
         </div>
@@ -26,22 +31,17 @@
 
 <div class="container blue-border" id="comments-section">
     <h2>Comments</h2>
-    {% if user.is_authenticated %}
-            <a href="{% url 'add_comment' %}">Add a comment</a>
-            <br>
     
-            <a href="{% url 'update_comment' %}">edit your comments</a> 
             
-            {% else %}
-            Please Log in <a href="{% url 'account_login' %}">Here</a> to add a comment.
-            <br>
-            If you do not have an account you can create one <a href="{% url 'account_signup' %}">Here.</a>
-            {% endif %}
     <div class="row">
         <div class="col-sm-6">
             
             {% for comment in comments %}
             {% if forloop.counter|divisibleby:2 %}
+            <br>
+            {% if request.user == comment.author %}
+            <a href="{% url 'update_comment' comment.pk %}">edit your comments</a> 
+            {% endif %}
             <strong>
                 {{ comment.author}} -
                 {{ comment.date_added}}
@@ -75,7 +75,4 @@
         </div>
     </div>
 </div>
-{% for comment in comments %}
-            {{ comment }}
-            {% endfor %}
 {%endblock%}

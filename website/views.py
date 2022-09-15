@@ -1,7 +1,8 @@
 import pprint
 import cloudinary.uploader
+from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
@@ -37,40 +38,17 @@ def display_artwork(request):
     return render(request, 'gallery.html', context)
 
 
-# def AddCommentView(request, _id):
-#     if request.method == 'POST':
-#         add_comment_form = AddCommentForm(request.POST)
-#         if add_comment_form.is_valid():
-#             add_comment_form = add_comment_form.save(commit=False)
-#             add_comment_form.author = request.user
-#             add_comment_form.save()
-#         return render(request, 'add_comment_success.html')
-#     add_comment_form = AddCommentForm()
-#     context = {'add_comment_form': add_comment_form}
-#     context["comment_id"] = comment.objects.get(_id=_id)
-#     return render(request, 'add_comment.html', context)
-
 class AddCommentView(CreateView):
     model = comment
     template_name = 'add_comment.html'
-    fields = ('author', 'post', 'name', 'body')
+    fields = ('name', 'body')
+    success_url = '/add_comment_success/'
 
-
-
-
-
-# def UpdateCommentView(request, _id):
-#     context = {}
-#     obj = get_object_or_404(comment, _id=_id)
-#     form = AddCommentForm(request.POST or None, instance=obj)
-#     if form.is_valid():
-#         form.save()
-#         return HttpResponseRedirect("/"+id)
-#     update_comment_form = AddCommentForm()
-#     context = {'update_comment_form': update_comment_form}
-#     return render(request, "update_comment.html", context)
-
-
+    def form_valid(self, form, **kwargs):
+        form.instance.author = self.request.user
+        post = add_art.objects.get(pk=self.kwargs['pk'])
+        form.instance.post = post
+        return super().form_valid(form)
 
 
 
@@ -78,8 +56,15 @@ class AddCommentView(CreateView):
 class UpdateCommentView(UpdateView):
     model = comment
     template_name = 'update_comment.html'
-    fields = ('author', 'post', 'name', 'body')
+    fields = ('name', 'body')
+    success_url = '/gallery/'
 
+
+class DeleteCommentView(DeleteView):
+    model = comment
+    template_name = 'update_comment.html'
+    fields = ('author', 'post', 'name', 'body')
+    success_url = reverse_lazy('comment-list')
 
 
 
@@ -111,7 +96,7 @@ def commission_view(request):
                 send_mail(subject, message, 'huemann49@gmail.com', ['huemann49@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return render(request, 'success.html')
+            return render(request, 'commissions_success.html')
 
     reference_form = ReferenceSheetForm(request.POST)
     if reference_form.is_valid():
@@ -135,7 +120,7 @@ def commission_view(request):
             send_mail(subject, message, 'huemann49@gmail.com', ['huemann49@gmail.com'])
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
-        return render(request, 'success.html')
+        return render(request, 'commissions_success.html')
 
     custom_form = CustomForm(request.POST)
     if custom_form.is_valid():
@@ -163,7 +148,7 @@ def commission_view(request):
             send_mail(subject, message, 'huemann49@gmail.com', ['huemann49@gmail.com'])
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
-        return render(request, 'success.html')
+        return render(request, 'commissions_success.html')
 
     custom_form = CustomForm()
     regular_form = RegularCommissionForm()

@@ -71,10 +71,7 @@ class comment(models.Model):
     ordering = ["created_on"]
 
     def __str__(self):
-        return '%s - %s' % (self.post.title, self.name)
+        return f"comment {self.name} {self.body}"
 
-    def get_absolute_url(self):
-        return reverse('add_comment_success')
-
-    def get_absolute_url_update(self):
-        return reverse('update_comment', kwargs={'pk': self.pk})
+    # def get_absolute_url(self):
+    #     return reverse('add_comment', args=(str(self.id)) )

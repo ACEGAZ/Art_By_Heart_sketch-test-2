@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load static%}
+
+{% block content %}
+<script>
+    setTimeout(function(){
+        window.location.href = "/commissions";
+    }, 4000);
+</script>
+<div class="container-fluid text-center success">
+    <div class="row align-items-center success">
+        <div class="col">
+            <h1>Thank you for your inquiry</h1>
+            <h2>Your contact information and message was successfully submitted.</h2>
+        </div>
+    </div>
+</div>
+{%endblock%}
