@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from django.urls import reverse
+
 # Create your models here.
 
 STATUS = ((0, "Draft"), 1, "Published")
@@ -55,13 +55,13 @@ class CustomCommissions(models.Model):
     other_info = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
 
-
     def __str__(self):
         return self.email
 
 
 class Comment(models.Model):
-    """comment model for autharised users to comment on artwork on gallery page"""
+    """comment model for autharised users to comment on artwork
+    on gallery page"""
     post = models.ForeignKey(AddArt, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
@@ -72,4 +72,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.name} {self.body}"
-

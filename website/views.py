@@ -1,24 +1,27 @@
 import pprint
-import cloudinary.uploader
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
+from django.shortcuts import render
 from django.views.generic import CreateView, UpdateView, DeleteView
-from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
-from .forms import RegularCommissionForm, ReferenceSheetForm, CustomForm, UploadArt
+from .forms import (RegularCommissionForm, ReferenceSheetForm, CustomForm,
+                    UploadArt)
 from .models import AddArt, Comment
 
 
-
 def index(request):
+    """renders index page to index.html """
     return render(request, 'index.html')
 
 
 def add_comment_success(request):
+    """renders add comment success page to add_comment_success.html """
     return render(request, 'add_comment_success.html')
 
 
 def upload_art_view(request):
+    """renders upload_art_view page to gallery.html
+    and upload art form
+    """
     if request.method == 'POST':
         upload_art_form = UploadArt(request.POST, request.FILES)
         if upload_art_form.is_valid():
@@ -30,6 +33,7 @@ def upload_art_view(request):
 
 
 def display_artwork(request):
+    """renders display_artwork forms to gallery.html"""
     pictures = AddArt.objects.all()
     comments = Comment.objects.all()
     context = {'pictures': pictures,
@@ -38,6 +42,7 @@ def display_artwork(request):
 
 
 class AddCommentView(CreateView):
+    """creates the AddCommentView view on gallery.html"""
     model = Comment
     template_name = 'add_comment.html'
     fields = ('name', 'body')
@@ -50,9 +55,8 @@ class AddCommentView(CreateView):
         return super().form_valid(form)
 
 
-
-
 class UpdateCommentView(UpdateView):
+    """creates the UpdateCommentView view on gallery.html"""
     model = Comment
     template_name = 'update_comment.html'
     fields = ('name', 'body')
@@ -60,14 +64,17 @@ class UpdateCommentView(UpdateView):
 
 
 class DeleteCommentView(DeleteView):
+    """creates the DeleteCommentView view on gallery.html"""
     model = Comment
     template_name = 'delete_comment.html'
     fields = ('name', 'body')
     success_url = ('/gallery/')
 
 
-
 def commission_view(request):
+    """creates the commission_view view on commsiions.html
+    and renders all commission forms
+    """
     if request.method == 'POST':
         regular_form = RegularCommissionForm(request.POST)
         if regular_form.is_valid():
@@ -77,7 +84,8 @@ def commission_view(request):
             character_owner = request.POST.get('character_owner', '')
             commission_type = request.POST.get('commission_type', '')
             type_option = request.POST.get('type_option', '')
-            character_personality = request.POST.get('character_personality', '')
+            character_personality = request.POST.get('character_personality',
+                                                     '')
             pose = request.POST.get('pose', '')
             other_info = request.POST.get('other_info', '')
             email = request.POST.get('email', '')
@@ -92,7 +100,8 @@ def commission_view(request):
             message = pprint.pformat(message_list, sort_dicts=False)
 
             try:
-                send_mail(subject, message, 'huemann49@gmail.com', ['huemann49@gmail.com'])
+                send_mail(subject, message, 'huemann49@gmail.com',
+                          ['huemann49@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return render(request, 'commissions_success.html')
@@ -116,7 +125,8 @@ def commission_view(request):
         message = pprint.pformat(message_list, sort_dicts=False)
 
         try:
-            send_mail(subject, message, 'huemann49@gmail.com', ['huemann49@gmail.com'])
+            send_mail(subject, message, 'huemann49@gmail.com',
+                      ['huemann49@gmail.com'])
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
         return render(request, 'commissions_success.html')
@@ -144,7 +154,8 @@ def commission_view(request):
         message = pprint.pformat(message_list, sort_dicts=False)
 
         try:
-            send_mail(subject, message, 'huemann49@gmail.com', ['huemann49@gmail.com'])
+            send_mail(subject, message, 'huemann49@gmail.com',
+                      ['huemann49@gmail.com'])
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
         return render(request, 'commissions_success.html')
@@ -156,5 +167,3 @@ def commission_view(request):
                'regular_form': regular_form,
                'custom_form': custom_form}
     return render(request, 'commissions.html', context)
-
-
