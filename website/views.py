@@ -6,7 +6,7 @@ from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from .forms import RegularCommissionForm, ReferenceSheetForm, CustomForm, UploadArt
-from .models import add_art, Comment
+from .models import AddArt, Comment
 
 
 
@@ -30,7 +30,7 @@ def upload_art_view(request):
 
 
 def display_artwork(request):
-    pictures = add_art.objects.all()
+    pictures = AddArt.objects.all()
     comments = Comment.objects.all()
     context = {'pictures': pictures,
                'comments': comments}
@@ -45,7 +45,7 @@ class AddCommentView(CreateView):
 
     def form_valid(self, form, **kwargs):
         form.instance.author = self.request.user
-        post = add_art.objects.get(pk=self.kwargs['pk'])
+        post = AddArt.objects.get(pk=self.kwargs['pk'])
         form.instance.post = post
         return super().form_valid(form)
 

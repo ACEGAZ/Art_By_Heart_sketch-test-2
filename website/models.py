@@ -7,7 +7,7 @@ from django.urls import reverse
 STATUS = ((0, "Draft"), 1, "Published")
 
 
-class add_art(models.Model):
+class AddArt(models.Model):
     """add artwork to website """
     title = models.CharField(max_length=200, unique=True)
     featured_image = CloudinaryField('image', default='placeholder')
@@ -62,7 +62,7 @@ class CustomCommissions(models.Model):
 
 class Comment(models.Model):
     """comment model for autharised users to comment on artwork on gallery page"""
-    post = models.ForeignKey(add_art, on_delete=models.CASCADE)
+    post = models.ForeignKey(AddArt, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     body = models.TextField()

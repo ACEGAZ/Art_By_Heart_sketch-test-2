@@ -3,7 +3,7 @@ from cloudinary.forms import CloudinaryFileField
 from .models import RegularCommission
 from .models import ReferenceSheetCommission
 from .models import CustomCommissions
-from .models import add_art
+from .models import AddArt
 
 
 
@@ -27,5 +27,5 @@ class CustomForm(ModelForm):
 
 class UploadArt(ModelForm):
     class Meta:
-        model = add_art
+        model = AddArt
         fields = '__all__'
