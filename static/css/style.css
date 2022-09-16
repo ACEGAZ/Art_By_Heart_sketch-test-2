@@ -10,6 +10,11 @@ input[type=submit] {
     margin-top: 20px;
 }
 
+#delete-comment-no-btn {
+    color: blue;
+    margin-left: 40px;
+}
+
 /* welcome message and terms of service */
 
 #welcome-message{
@@ -316,7 +321,7 @@ h1 {
 .gallery-art-display {
     border-radius: 50%;
     width: 50%;
-    height: 50%;
+    height: 100%;
 }
 
 .gallery-art-display h1{
@@ -329,6 +334,10 @@ h1 {
     width: 50%;
     height: 50%;
     margin-bottom: 50px;
+}
+
+.gallery-art-display a {
+    display: block;
 }
 
 /* gallery comments section */

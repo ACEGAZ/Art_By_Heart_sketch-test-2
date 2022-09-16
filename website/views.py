@@ -1,6 +1,5 @@
 import pprint
 import cloudinary.uploader
-from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django.conf import settings
@@ -62,9 +61,9 @@ class UpdateCommentView(UpdateView):
 
 class DeleteCommentView(DeleteView):
     model = comment
-    template_name = 'update_comment.html'
-    fields = ('author', 'post', 'name', 'body')
-    success_url = reverse_lazy('comment-list')
+    template_name = 'delete_comment.html'
+    fields = ('name', 'body')
+    success_url = ('/gallery/')
 
 
 

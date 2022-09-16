@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row" id="delete-comment">
+        <form action="" method="post">
+            <h1>Would you like to delete your comment?</h1>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input type="submit" value="Yes">
+            <a href="/gallery/"><input type="button" value="No" id="delete-comment-no-btn"></a>
+         </form>
+    </div>
+</div>
+{%endblock%}

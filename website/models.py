@@ -73,5 +73,3 @@ class comment(models.Model):
     def __str__(self):
         return f"comment {self.name} {self.body}"
 
-    # def get_absolute_url(self):
-    #     return reverse('add_comment', args=(str(self.id)) )
