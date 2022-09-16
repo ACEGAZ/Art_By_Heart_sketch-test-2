@@ -16,7 +16,7 @@ class add_art(models.Model):
         return self.title
 
 
-class regular_commission(models.Model):
+class RegularCommission(models.Model):
     """contact form for users to request regular commisions"""
     character_reference = models.CharField(max_length=100)
     character_owner = models.CharField(max_length=100)
@@ -31,7 +31,7 @@ class regular_commission(models.Model):
         return self.email
 
 
-class reference_sheet_commission(models.Model):
+class ReferenceSheetCommission(models.Model):
     """contact form for users to request reference sheet commisions"""
     character_reference = models.CharField(max_length=100)
     character_owner = models.CharField(max_length=100)
@@ -44,7 +44,7 @@ class reference_sheet_commission(models.Model):
         return self.email
 
 
-class custom_commissions(models.Model):
+class CustomCommissions(models.Model):
     """contact form for users to request custom commisions"""
     theme = models.CharField(max_length=100)
     colours = models.CharField(max_length=100)
@@ -60,7 +60,7 @@ class custom_commissions(models.Model):
         return self.email
 
 
-class comment(models.Model):
+class Comment(models.Model):
     """comment model for autharised users to comment on artwork on gallery page"""
     post = models.ForeignKey(add_art, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -71,5 +71,5 @@ class comment(models.Model):
     ordering = ["created_on"]
 
     def __str__(self):
-        return f"comment {self.name} {self.body}"
+        return f"Comment {self.name} {self.body}"
 

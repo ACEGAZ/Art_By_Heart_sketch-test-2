@@ -1,12 +1,12 @@
 import pprint
 import cloudinary.uploader
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
-from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
-from .forms import RegularCommissionForm, ReferenceSheetForm, CustomForm, UploadArt, AddCommentForm
-from .models import add_art, comment
+from .forms import RegularCommissionForm, ReferenceSheetForm, CustomForm, UploadArt
+from .models import add_art, Comment
 
 
 
@@ -31,14 +31,14 @@ def upload_art_view(request):
 
 def display_artwork(request):
     pictures = add_art.objects.all()
-    comments = comment.objects.all()
+    comments = Comment.objects.all()
     context = {'pictures': pictures,
                'comments': comments}
     return render(request, 'gallery.html', context)
 
 
 class AddCommentView(CreateView):
-    model = comment
+    model = Comment
     template_name = 'add_comment.html'
     fields = ('name', 'body')
     success_url = '/add_comment_success/'
@@ -53,14 +53,14 @@ class AddCommentView(CreateView):
 
 
 class UpdateCommentView(UpdateView):
-    model = comment
+    model = Comment
     template_name = 'update_comment.html'
     fields = ('name', 'body')
     success_url = '/gallery/'
 
 
 class DeleteCommentView(DeleteView):
-    model = comment
+    model = Comment
     template_name = 'delete_comment.html'
     fields = ('name', 'body')
     success_url = ('/gallery/')
